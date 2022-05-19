@@ -709,6 +709,29 @@ The CMake function ``rosidl_target_interfaces()`` has been deprecated, and now i
 Users wanting to use messages/services/actions in the same ROS package that generated them should instead call ``rosidl_get_typesupport_target()`` and then ``target_link_libraries()`` to make their targets depend on the returned typesupport target.
 See https://github.com/ros2/rosidl/pull/606 for more details, and https://github.com/ros2/demos/pull/529 for an example of using the new function.
 
+
+rviz2
+^^^^^
+
+We've added `the ability to apply textures defined via URI to arbitrary triangle lists using UV Coordinates <https://github.com/ros2/rviz/pull/719>`__.
+Now we can create a gradient pull from a texture map instead of the default grayscale.
+This will enable complex coloring of markers. To use this, you should use the
+``visualization_msgs/Marker.msg`` and fill the ``texture_resource``, ``texture``, ``uv_coordinates`` and ``mesh_file`` fields.
+You can find more information `here <https://github.com/ros2/common_interfaces/pull/153>`__.
+
+.. image:: images/triangle_marker_with_gradient.png
+
+We also added the ability to visualize inertias. To do this, you select enable 'Inertia' in the 'Mass Properties' under the robot model:
+
+.. image:: images/rviz_mass_inertia.png
+
+You can see an image of an inertia below.
+
+.. image:: images/tb4_inertia.png
+
+Some smaller changes are that we've `improved the efficiency of 3-bytes pixel formats <https://github.com/ros2/rviz/pull/743>`__ and have `changed the way inertias are computed to use ignition math rather than Ogre's math libraries <https://github.com/ros2/rviz/pull/751>`__.
+
+
 geometry2
 ^^^^^^^^^
 
@@ -792,7 +815,9 @@ These topics will no longer be automatically added to the bag.
 Known Issues
 ------------
 
-To come.
+When `installing ROS 2 on an Ubuntu 22.04 Jammy host <../../humble/Installation/Ubuntu-Install-Debians.html>`__ it is important to update your system before installing ROS 2 packages.
+It is *particularly* important to make sure that ``systemd`` and ``udev`` are updated to the latest available version otherwise installing ``ros-humble-desktop``, which depends on ``libudev1``, could cause the removal of system critical packages.
+Details can be found in `ros2/ros2#1272 <https://github.com/ros2/ros2/issues/1272>`_ and `Launchpad #1974196 <https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1974196>`_
 
 Release Timeline
 ----------------
