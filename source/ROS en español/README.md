@@ -7,8 +7,6 @@ Para trabajar en el proyecto, necesitarás una copia local del repositorio que c
 
 Haz click en el botón **fork** en la parte superior izquierda
 
-  
-
 Luego de seleccionar el botón fork tendrás el repositorio en tu cuenta de GitHub.
 
 # Paso 2: Clonar el proyecto
@@ -78,11 +76,6 @@ Para hacer push de los cambios en los que has estado trabajando debes ejecutar:
 
 Este es el paso final, donde es importante destacar los cambios realizados, recuerda hacer referencia a la issue de partida. Para abrir un pull request, navega hasta el repositorio principal como puedes ver en la siguiente imagen:
 
-  
-
-Podrás ver la última rama que subiste *'traduccion-ros2-nav'*, entonces debes hacer click en **'compare and pull request'.** Al abrir una solicitud de pull request, esperaras que el o los revisor o revisores del proyecto den el ok.
-
-  
-  
+  Podrás ver la última rama que subiste *'traduccion-ros2-nav'*, entonces debes hacer click en **'compare and pull request'.** Al abrir una solicitud de pull request, esperaras que el o los revisor o revisores del proyecto den el ok.
 
 Listo!,gracias por tu contribución, una vez que sea aprobado vas a poder hacer Merge, desde el pull request creado, haciendo click en en el botón Merge
